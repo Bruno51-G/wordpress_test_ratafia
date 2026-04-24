@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Core WordPress (géré par Docker, pas à versionner)
+wp_app/*
+
+# Sauf le thème custom
+!wp_app/wp-content/
+wp_app/wp-content/*
+!wp_app/wp-content/themes/
+wp_app/wp-content/themes/*
+!wp_app/wp-content/themes/domaine-la-vignerie/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+name: site-ratafia
+
+volumes:
+  db_data_wp:
+
+services:
+  wordpress_db:
+    container_name: site-ratafia-db
+    image: mariadb:11.8.5
+    volumes:
+      - db_data_wp:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MARIADB_DATABASE=db_wordpress
+      - MARIADB_USER=userAdmin
+      - MARIADB_PASSWORD=${MYSQL_PASSWORD}
+    ports: ['3318:3306']
+
+  wordpress:
+    container_name: site-ratafia-web
+    image: wordpress:6.7.2-php8.3-apache
+    ports: ['8098:80']
+    restart: unless-stopped
+    depends_on: ['wordpress_db']
+    environment:
+      - WORDPRESS_DB_HOST=wordpress_db
+      - WORDPRESS_DB_NAME=db_wordpress
+      - WORDPRESS_DB_USER=userAdmin
+      - WORDPRESS_DB_PASSWORD=${MYSQL_PASSWORD}
+    working_dir: /var/www/html
+    volumes:
+      - ./wp_app:/var/www/html
