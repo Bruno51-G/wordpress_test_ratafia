@@ -31,3 +31,4 @@ services:
     working_dir: /var/www/html
     volumes:
       - ./wp_app:/var/www/html
+      - ./php.ini:/usr/local/etc/php/conf.d/custom.ini
