@@ -1,3 +1,9 @@
+/* Police d'écriture pour le bouton "DÉCOUVRIR LA CUVÉE" */
+@font-face {
+  font-family: Fira Sans;
+  src: url(../fonts/FiraSans-Regular.ttf) format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +40,7 @@ body {
   display: block;
   position: relative;
   width: 100%;
+  animation: fadeIn 0.5s ease;
 }
 
 /* Image de fond avec décors et illustrations */
@@ -93,17 +100,6 @@ body {
   border: 1px solid #1A2A6C;
   padding: 10px 24px;
   cursor: pointer;
-}
-
-/* Animation de transition entre slides */
-.slide_active {
-  animation: fadeIn 0.5s ease;
-}
-
-/* Police d'écriture pour le bouton "DÉCOUVRIR LA CUVÉE" */
-@font-face {
-  font-family: Fira Sans;
-  src: url(../fonts/FiraSans-Regular.ttf) format('truetype');
 }
 
 /* Animation de transition entre les slides */
