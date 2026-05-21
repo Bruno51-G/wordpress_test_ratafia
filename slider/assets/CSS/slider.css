@@ -43,56 +43,53 @@ body {
   display: block;
 }
 
-/* Bouteille superposée au centre par-dessus le décor */
+/* Bouteille superposée par-dessus le décor */
 .slide_bouteille {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
-  height: 90%;
+  height: 100%;
   width: auto;
-  max-height: 600px;
+  max-height: 800px;
   pointer-events: none;
 }
 
 /* Barre de navigation */
 .slide_navigation {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* les éléments s'étirent à la même hauteur */
   justify-content: center;
-  gap: 20px;
+  
   padding: 20px 0;
+  margin-left: 100px;
 }
 
 /* Boutons flèches */
 .bouton_navigation {
-  background: transparent;
-  border: 2px solid #1A2A6C;
-  color: #1A2A6C;
-  width: 40px;
-  height: 40px;
+  background: #1A2A6C;
+  border: none;
+  width: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s;
 }
 
 .bouton_navigation img {
   width: 100%;
   height: auto;
-}
-
-.bouton_navigation:hover {
-  background: #1A2A6C;
+  
 }
 
 /* Bouton DÉCOUVRIR LA CUVÉE */
 .decouverte_cuvee {
-  font-size: 14px;
+  font-size: 30px;
+  font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 3px;
-  color: #1A2A6C;
+  color: #FFFFFF;
   text-transform: uppercase;
+  background: #1A2A6C;
   border: 1px solid #1A2A6C;
   padding: 10px 24px;
   cursor: pointer;
@@ -103,6 +100,13 @@ body {
   animation: fadeIn 0.5s ease;
 }
 
+/* Police d'écriture pour le bouton "DÉCOUVRIR LA CUVÉE" */
+@font-face {
+  font-family: Fira Sans;
+  src: url(../fonts/FiraSans-Regular.ttf) format('truetype');
+}
+
+/* Animation de transition entre les slides */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
