@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: transparent;
+  font-family: 'Georgia', serif;
+}
+
+/* Conteneur principal du slider */
+.slider_complet {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Piste où défile le slider */
+.slide_piste {
+  position: relative;
+  width: 100%;
+}
+
+/* Tous les slides sont cachés par défaut */
+.slide {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+/* Slide actif visible */
+.slide_active {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+/* Image de fond avec décors et illustrations */
+.slide_decor {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bouteille superposée au centre par-dessus le décor */
+.slide_bouteille {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  width: auto;
+  max-height: 600px;
+  pointer-events: none;
+}
+
+/* Barre de navigation */
+.slide_navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Boutons flèches */
+.bouton_navigation {
+  background: transparent;
+  border: 2px solid #1A2A6C;
+  color: #1A2A6C;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bouton_navigation img {
+  width: 100%;
+  height: auto;
+}
+
+.bouton_navigation:hover {
+  background: #1A2A6C;
+}
+
+/* Bouton DÉCOUVRIR LA CUVÉE */
+.decouverte_cuvee {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #1A2A6C;
+  text-transform: uppercase;
+  border: 1px solid #1A2A6C;
+  padding: 10px 24px;
+  cursor: pointer;
+}
+
+/* Animation de transition entre slides */
+.slide_active {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
