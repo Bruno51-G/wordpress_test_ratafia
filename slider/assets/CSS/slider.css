@@ -66,7 +66,7 @@ body {
   min-width: 33.33%;
   height: 100%;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0.6;
+  opacity: 1;
   transform: scale(0.8);
 }
 
@@ -84,9 +84,22 @@ body {
   margin: 0 auto;
 }
 
+/* Bouteille précédente : à moitié sortie à gauche */
+.bouteille.precedent {
+  opacity: 1;
+  transform: scale(0.8) translateX(-60%);
+}
+
+/* Bouteille suivante : à moitié sortie à droite */
+.bouteille.suivant {
+  opacity: 1;
+  transform: scale(0.8) translateX(70%);
+}
+
+
 /* Barre de navigation */
 .slide_navigation {
-  position: fixed;
+  position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -126,7 +139,7 @@ body {
   cursor: pointer;
 }
 
-/* Animation fadeIn pour les fonds */
+/* Animation de changement pour les fonds */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }

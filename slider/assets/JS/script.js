@@ -33,7 +33,7 @@ function updateBouteilles() {
 
     bouteilles[prev].classList.add('precedent');
     bouteilles[prev].style.order = '1';
-    bouteilles[prev].style.opacity = '0.6';
+    bouteilles[prev].style.opacity = '1';
 
     bouteilles[current].classList.add('actif');
     bouteilles[current].style.order = '2';
@@ -41,7 +41,7 @@ function updateBouteilles() {
 
     bouteilles[next].classList.add('suivant');
     bouteilles[next].style.order = '3';
-    bouteilles[next].style.opacity = '0.6';
+    bouteilles[next].style.opacity = '1';
 
     const piste = document.querySelector('.bouteilles_piste');
     piste.style.transform = 'translateX(0%)';
