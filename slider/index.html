@@ -8,49 +8,79 @@
     <script type="text/javascript" src="./assets/JS/script.js" defer></script>
 </head>
 <body>
+
     <!-- Conteneur principal du slider -->
     <div class="slider_complet">
 
-        <!-- piste où défile le slider -->
-        <div class="slide_piste">
-        
-        <!-- Slide 1 : affiché par défault au chargement de la page -->
-        <div class="slide_active">
-            <img class="slide_decor" src="./img/DECOR_1.png" alt="Fond du slide n°1">
-            <img class="slide_bouteille" src="./img/bouteille1.png" alt="Bouteille n°1">
+        <!-- Fonds : changement simple par fadeIn -->
+        <div class="fonds_piste">
+
+            <!-- Fond 1 : affiché par défaut -->
+            <div class="fond actif">
+                <img src="./img/DECOR_1.png" alt="Fond du slide n°1">
+            </div>
+
+            <!-- Fond 2 -->
+            <div class="fond">
+                <img src="./img/DECOR2.png" alt="Fond du slide n°2">
+            </div>
+
+            <!-- Fond 3 -->
+            <div class="fond">
+                <img src="./img/DECOR3.png" alt="Fond du slide n°3">
+            </div>
+
+            <!-- Fond 4 -->
+            <div class="fond">
+                <img src="./img/DECOR4.png" alt="Fond du slide n°4">
+            </div>
+
         </div>
 
-        <!-- Slide 2 -->
-        <div class="slide">
-            <img class="slide_decor" src="./img/DECOR2.png" alt="Fond du slide n°2">
-            <img class="slide_bouteille" src="./img/bouteille2.png" alt="Bouteille n°2">
+        <!-- Bouteilles : carrousel avec 3 visibles simultanément -->
+        <div class="bouteilles_piste">
+
+            <!-- Bouteille 1 : active par défaut -->
+            <div class="bouteille actif">
+                <img src="./img/bouteille1.png" alt="Bouteille n°1">
+            </div>
+
+            <!-- Bouteille 2 -->
+            <div class="bouteille suivant">
+                <img src="./img/bouteille2.png" alt="Bouteille n°2">
+            </div>
+
+            <!-- Bouteille 3 -->
+            <div class="bouteille">
+                <img src="./img/bouteille3.png" alt="Bouteille n°3">
+            </div>
+
+            <!-- Bouteille 4 -->
+            <div class="bouteille precedent">
+                <img src="./img/bouteille4.png" alt="Bouteille n°4">
+            </div>
+
         </div>
 
-        <!-- Slide 3 -->
-        <div class="slide">
-            <img class="slide_decor" src="./img/DECOR3.png" alt="Fond du slide n°3">
-            <img class="slide_bouteille" src="./img/bouteille3.png" alt="Bouteille n°3">
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="slide">
-            <img class="slide_decor" src="./img/DECOR4.png" alt="Fond du slide n°4">
-            <img class="slide_bouteille" src="./img/bouteille4.png" alt="Bouteille n°4">
-        </div>
-
-        <!-- Navigation du slider (flèche gauche / droite + bouton de validation) -->
+        <!-- Navigation du slider -->
         <div class="slide_navigation">
+
             <!-- Bouton slide précédent -->
-            <button class="bouton_navigation" id="bouton_precedent"><img src="./img/direction_gauche.png" alt="Bouton précédent"></button>
-            
-            <!-- Bouton de validation pour voir la cuvée de ratafia -->
+            <button class="bouton_navigation" id="bouton_precedent">
+                <img src="./img/direction_gauche.png" alt="Bouton précédent">
+            </button>
+
+            <!-- Bouton de validation pour voir la cuvée -->
             <span class="decouverte_cuvee">DÉCOUVRIR LA CUVÉE</span>
 
             <!-- Bouton slide suivant -->
-            <button class="bouton_navigation" id="bouton_suivant"><img src="./img/direction_droite.png" alt="Bouton suivant"></button>
-        </div>
+            <button class="bouton_navigation" id="bouton_suivant">
+                <img src="./img/direction_droite.png" alt="Bouton suivant">
+            </button>
+
         </div>
 
     </div>
+
 </body>
 </html>

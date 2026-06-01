@@ -1,7 +1,7 @@
 /* Police d'écriture pour le bouton "DÉCOUVRIR LA CUVÉE" */
 @font-face {
-  font-family: Fira Sans;
-  src: url(../fonts/FiraSans-Regular.ttf) format('truetype');
+  font-family: 'Fira Sans';
+  src: url('../fonts/FiraSans-Regular.ttf') format('truetype');
 }
 
 * {
@@ -22,87 +22,111 @@ body {
   overflow: hidden;
 }
 
-/* Piste où défile le slider */
-.slide_piste {
+/* Piste des fonds : empilés, un seul visible à la fois */
+.fonds_piste {
   position: relative;
   width: 100%;
 }
 
-/* Tous les slides sont cachés par défaut */
-.slide {
+/* Tous les fonds sont cachés par défaut */
+.fond {
   display: none;
-  position: relative;
   width: 100%;
 }
 
-/* Slide actif visible */
-.slide_active {
+/* Fond actif visible avec fadeIn */
+.fond.actif {
   display: block;
-  position: relative;
-  width: 100%;
   animation: fadeIn 0.5s ease;
 }
 
-/* Image de fond avec décors et illustrations */
-.slide_decor {
+.fond img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Bouteille superposée par-dessus le décor */
-.slide_bouteille {
+/* Piste des bouteilles : flex horizontal */
+.bouteilles_piste {
   position: absolute;
-  top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-height: 800px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease;
   pointer-events: none;
+}
+
+/* Chaque bouteille occupe 1/3 de la largeur */
+.bouteille {
+  display: block;
+  position: relative;
+  min-width: 33.33%;
+  height: 100%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
+/* Bouteille active : grande */
+.bouteille.actif {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bouteille img {
+  width: auto;
+  height: 100%;
+  max-height: 800px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Barre de navigation */
 .slide_navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  align-items: stretch; /* les éléments s'étirent à la même hauteur */
-  justify-content: center;
-  
-  padding: 20px 0;
-  margin-left: 100px;
+  align-items: stretch;
+  z-index: 10;
+  padding: 0;
 }
 
 /* Boutons flèches */
 .bouton_navigation {
-  background: #1A2A6C;
+  background: #E8941A;
   border: none;
-  width: 20px;
+  width: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 8px;
 }
-
 .bouton_navigation img {
-  width: 100%;
+  width: 10px;
   height: auto;
-  
+  pointer-events: none;
 }
 
 /* Bouton DÉCOUVRIR LA CUVÉE */
 .decouverte_cuvee {
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 3px;
   color: #FFFFFF;
   text-transform: uppercase;
-  background: #1A2A6C;
-  border: 1px solid #1A2A6C;
+  background: #E8941A;
+  border: none;
   padding: 10px 24px;
   cursor: pointer;
 }
 
-/* Animation de transition entre les slides */
+/* Animation fadeIn pour les fonds */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
