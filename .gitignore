@@ -2,15 +2,9 @@
 .env
 
 # Core WordPress (géré par Docker, pas à versionner)
-wp_app/*
+wp_app/wp_admin/*
+wp_app/wp-includes/*
 
 # Sauf le thème custom
 !wp_app/wp-content/
-wp_app/wp-content/*
-!wp_app/wp-content/themes/
-wp_app/wp-content/themes/*
-!wp_app/wp-content/themes/domaine-la-vignerie/
 
-# OS
-.DS_Store
-Thumbs.db
