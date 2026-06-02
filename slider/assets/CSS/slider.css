@@ -70,7 +70,7 @@ body {
   transform: scale(0.8);
 }
 
-/* Bouteille active : grande */
+/* Bouteille mise en avant */
 .bouteille.actif {
   opacity: 1;
   transform: scale(1);
@@ -101,11 +101,10 @@ body {
 .slide_navigation {
   position: absolute;
   bottom: 20px;
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
   display: flex;
   align-items: stretch;
-  z-index: 10;
   padding: 0;
 }
 
