@@ -4,6 +4,34 @@
   src: url('../fonts/FiraSans-Regular.ttf') format('truetype');
 }
 
+/* Police d'écriture pour le titre et le sous titre */
+@font-face{
+  font-family: 'Courier Prime';
+  src: url('../fonts/CourierPrime-Regular.ttf') format('truetype');
+}
+
+/* TITRE ET SOUS TITRE */
+.titre_slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 0.05em;
+  line-height: 128px;
+}
+
+h2{
+  font-family: 'Courier Prime', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+}
+
+h3{
+  font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  font-size: 60px;
+}
+
+/* SLIDE */
 * {
   margin: 0;
   padding: 0;
@@ -73,7 +101,7 @@ body {
 /* Bouteille mise en avant */
 .bouteille.actif {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateX(8%);
 }
 
 .bouteille img {
@@ -97,11 +125,13 @@ body {
 }
 
 
+/* FLECHES ET BOUTON NAVIGATION */
+
 /* Barre de navigation */
 .slide_navigation {
   position: absolute;
   bottom: 20px;
-  left: 48%;
+  left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: stretch;

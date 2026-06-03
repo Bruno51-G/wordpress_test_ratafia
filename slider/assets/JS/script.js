@@ -54,10 +54,19 @@ const couleurs = ['#161B4B', '#E8941A', '#107D81', '#E9453F'];
 function updateNavigation() {
     const boutons = document.querySelectorAll('.bouton_navigation');
     const label = document.querySelector('.decouverte_cuvee');
+    const h2 = document.querySelector('.titre_slide h2');
+    const h3 = document.querySelector('.titre_slide h3');
     const couleur = couleurs[current];
-    
+   
+// Changer la couleur du boutons et des flèches
     boutons.forEach(b => b.style.backgroundColor = couleur);
     label.style.backgroundColor = couleur;
+
+
+// Changer la couleur des titres h2 et h3
+    h2.style.color = couleur;
+    h3.style.color = couleur;
+
 }
 
 // Fonction principale
