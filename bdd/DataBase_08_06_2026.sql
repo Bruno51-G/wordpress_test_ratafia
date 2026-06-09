@@ -16,8 +16,8 @@
 
 
 -- Listage de la structure de la base pour db_wordpress
-CREATE DATABASE IF NOT EXISTS `db_wordpress` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
-USE `db_wordpress`;
+-- CREATE DATABASE IF NOT EXISTS `db_wordpress` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
+-- USE `db_wordpress`;
 
 -- Listage de la structure de table db_wordpress. wp_commentmeta
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
