@@ -49,3 +49,8 @@
 ### * Il manque certainement un répertoire ou un fichier coté serveur, il suffit de le transférer du coté local vers le coté serveur grace à FileZilla.
 
 
+# Sauvegarder sa base de données :
+
+## Dans PhpMyadmin, sélectionner sa base de données, puis cliquer sur l'onglet export, mettre format SQL et enfin cliquer sur Export. La base de données est enregistrée dans le répertoire choisi en local.
+
+
