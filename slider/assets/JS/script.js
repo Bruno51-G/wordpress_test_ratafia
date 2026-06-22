@@ -69,6 +69,43 @@ function updateNavigation() {
 
 }
 
+// === Gestion du swipe à la souris sur les bouteilles ===
+const piste = document.querySelector('.bouteilles_piste');
+let startX = 0;
+let isDragging = false;
+const seuilSwipe = 50; // distance minimale en pixels pour valider un swipe
+
+// Clic enfoncé : début du glissement
+piste.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+    isDragging = true;
+});
+
+// Relâchement du clic : fin du glissement
+piste.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const endX = e.clientX;
+    const distance = endX - startX;
+
+    if (distance > seuilSwipe) {
+        // Glissement vers la droite : bouteille précédente
+        current = getPrev(current);
+        updateSlider();
+    } else if (distance < -seuilSwipe) {
+        // Glissement vers la gauche : bouteille suivante
+        current = getNext(current);
+        updateSlider();
+    }
+});
+
+// Si la souris sort de la zone pendant le clic, on annule
+piste.addEventListener('mouseleave', () => {
+    isDragging = false;
+});
+
+
 // Fonction principale
 function updateSlider() {
     updateFond();
