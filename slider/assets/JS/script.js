@@ -140,3 +140,12 @@ document.addEventListener('keydown', (e) => {
         document.querySelector('.decouverte_cuvee a').click();
     }
 });
+
+// === Gestion du thème clair / sombre ===
+document.getElementById('bouton_clair').addEventListener('click', () => {
+    document.body.classList.remove('theme_sombre');
+});
+
+document.getElementById('bouton_sombre').addEventListener('click', () => {
+    document.body.classList.add('theme_sombre');
+});

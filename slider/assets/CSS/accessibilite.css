@@ -1,0 +1,62 @@
+:root{
+  --dark: #111111;
+  --light: #FFFFFF;
+  --primary: #1A2A6C;
+  --secondary: #C6131A;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+/* === BARRE ACCESSIBILITE === */
+.barre_accessibilite {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.bouton_theme {
+  background: transparent;
+  border: 1px solid var(--dark);
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+}
+
+.bouton_theme img {
+  width: 100%;
+  height: auto;
+}
+
+/* === THEME SOMBRE === */
+body.theme_sombre .bouton_theme {
+  border-color: #FFFFFF;
+}
+
+body.theme_sombre {
+  background: #000000;
+}
+
+body.theme_sombre h2,
+body.theme_sombre h3 {
+  color: #FFFFFF;
+}
+
+body.theme_sombre .liens_droite a {
+  color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+}
+
+/* invertion des couleurs */
+body.theme_sombre .bouton_theme img {
+  filter: invert(1);
+}
