@@ -54,19 +54,11 @@ const couleurs = ['#161B4B', '#E8941A', '#107D81', '#E9453F'];
 function updateNavigation() {
     const boutons = document.querySelectorAll('.bouton_navigation');
     const label = document.querySelector('.decouverte_cuvee');
-    // const h2 = document.querySelector('.titre_slide h2');
-    // const h3 = document.querySelector('.titre_slide h3');
     const couleur = couleurs[current];
    
 // Changer la couleur du boutons et des flèches
     boutons.forEach(b => b.style.backgroundColor = couleur);
     label.style.backgroundColor = couleur;
-
-
-// Changer la couleur des titres h2 et h3
-    // h2.style.color = couleur;
-    // h3.style.color = couleur;
-
 }
 
 // === Gestion du swipe à la souris sur les bouteilles ===
@@ -128,4 +120,23 @@ document.getElementById('bouton_suivant').addEventListener('click', () => {
 // Initialisation au chargement
 updateSlider();
 
-
+// === Utilisation du clavier au clavier ===
+document.addEventListener('keydown', (e) => {
+    
+    // Flèche gauche : bouteille précédente
+    if (e.key === 'ArrowLeft') {
+        current = getPrev(current);
+        updateSlider();
+    }
+    
+    // Flèche droite : bouteille suivante
+    if (e.key === 'ArrowRight') {
+        current = getNext(current);
+        updateSlider();
+    }
+    
+    // Touche Entrée : déclencher le bouton "DÉCOUVRIR LA CUVÉE"
+    if (e.key === 'Enter') {
+        document.querySelector('.decouverte_cuvee a').click();
+    }
+});

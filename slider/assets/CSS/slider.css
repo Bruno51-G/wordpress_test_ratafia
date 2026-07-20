@@ -2,95 +2,108 @@
 @font-face {
   font-family: 'Fira Sans';
   src: url('../fonts/FiraSans-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 /* Police d'écriture pour le titre et le sous titre */
 @font-face{
   font-family: 'Courier Prime';
   src: url('../fonts/CourierPrime-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
-/* TITRE ET SOUS TITRE */
+:root{
+  --dark: #111111;
+  --light: #FFFFFF;
+  --primary: #1A2A6C;
+  --secondary: #C6131A;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+  background: transparent;
+  font-family: 'Georgia', serif;
+}
+
+/* === TITRE ET SOUS TITRE === */
 .titre_slide{
   display: flex;
   flex-direction: column;
   align-items: center;
   letter-spacing: 0.05em;
-  line-height: 128px;
+  line-height: 12.8rem;
 }
 
 h2{
   font-family: 'Courier Prime', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
-  font-size: 80px;
+  font-size: 8rem;
+  color: var(--primary);
 }
 
 h3{
   font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: lighter;
-  font-size: 60px;
+  font-size: 6rem;
+  color: var(--primary);
 }
 
-/* LIENS À DROITES */
+/* === LIENS À DROITE === */
 .liens_droite {
   position: absolute;
-  top: 200px;
-  right: 20px;
+  top: 20rem;
+  right: 2rem;
   z-index: 4;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .liens_droite a {
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 3rem;
   text-decoration: none;
-  border-bottom: 2px solid;
-  padding-bottom: 3px;
+  border-bottom: 0.2rem solid;
+  padding-bottom: 0.3rem;
 }
 
 .liens_droite a:first-child {
-  color: #C6131A;
+  color: var(--secondary);
 }
 
 .liens_droite a:last-child {
-  color: #1A2A6C;
+  color: var(--primary);
 }
 
-/* SLIDE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* === SLIDE === */
 
-body {
-  background: transparent;
-  font-family: 'Georgia', serif;
-}
-
-/* Conteneur principal du slider */
 .slider_complet {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-/* Piste des fonds : empilés, un seul visible à la fois */
 .fonds_piste {
   position: relative;
   width: 100%;
 }
 
-/* Tous les fonds sont cachés par défaut */
 .fond {
   display: none;
   width: 100%;
 }
 
-/* Fond actif visible avec fadeIn */
 .fond.actif {
   display: block;
   animation: fadeIn 0.5s ease;
@@ -102,7 +115,6 @@ body {
   display: block;
 }
 
-/* Piste des bouteilles : flex horizontal */
 .bouteilles_piste {
   position: absolute;
   top: 0;
@@ -115,7 +127,6 @@ body {
   pointer-events: auto;
 }
 
-/* Chaque bouteille occupe 1/3 de la largeur */
 .bouteille {
   display: block;
   position: relative;
@@ -126,7 +137,6 @@ body {
   transform: scale(0.8);
 }
 
-/* Bouteille mise en avant */
 .bouteille.actif {
   opacity: 1;
   transform: scale(1) translateX(8%);
@@ -135,24 +145,21 @@ body {
 .bouteille img {
   width: auto;
   height: 100%;
-  max-height: 800px;
+  max-height: 80rem;
   display: block;
   margin: 0 auto;
 }
 
-/* Bouteille précédente : à moitié sortie à gauche */
 .bouteille.precedent {
   opacity: 1;
   transform: scale(0.8) translateX(-60%);
 }
 
-/* Bouteille suivante : à moitié sortie à droite */
 .bouteille.suivant {
   opacity: 1;
   transform: scale(0.8) translateX(70%);
 }
 
-/* Empêche la zone de sélection des bouteilles */
 .bouteilles_piste,
 .bouteille,
 .bouteille img {
@@ -161,12 +168,11 @@ body {
   -webkit-user-drag: none;
 }
 
-/* FLECHES ET BOUTON NAVIGATION */
+/* === FLECHES ET BOUTON NAVIGATION === */
 
-/* Barre de navigation */
 .slide_navigation {
   position: absolute;
-  bottom: 20px;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -174,37 +180,130 @@ body {
   padding: 0;
 }
 
-/* Boutons flèches */
 .bouton_navigation {
-  background: #E8941A;
   border: none;
-  width: 30px;
+  width: 3rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 8px;
+  padding: 0 0.8rem;
 }
+
 .bouton_navigation img {
-  width: 10px;
+  width: 1rem;
   height: auto;
   pointer-events: none;
 }
 
-/* Bouton DÉCOUVRIR LA CUVÉE */
 .decouverte_cuvee {
-  font-size: 20px;
+  font-size: 2rem;
   font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 3px;
-  color: #FFFFFF;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
-  background: #E8941A;
   border: none;
-  padding: 10px 24px;
+  padding: 1rem 2.4rem;
   cursor: pointer;
 }
 
-/* Animation de changement pour les fonds */
+a{
+  color: var(--light);
+  text-decoration: none;
+}
+
+.bouton_navigation:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.decouverte_cuvee:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+/* === RESPONSIVE === */
+
+/* Tablette */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  .titre_slide {
+    line-height: 8rem;
+  }
+
+  .liens_droite {
+    top: 15rem;
+    right: 1rem;
+  }
+
+  .liens_droite a {
+    font-size: 2rem;
+  }
+
+  .bouteille img {
+    max-height: 50rem;
+  }
+
+  .decouverte_cuvee {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .bouton_navigation {
+    width: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .titre_slide {
+    line-height: 6rem;
+  }
+
+  .liens_droite {
+    top: 10rem;
+    right: 0.5rem;
+  }
+
+  .liens_droite a {
+    font-size: 1.5rem;
+  }
+
+  .bouteille {
+    min-width: 50%;
+  }
+
+  .bouteille img {
+    max-height: 35rem;
+  }
+
+  .decouverte_cuvee {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .bouton_navigation {
+    width: 2rem;
+  }
+}
+
+/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
