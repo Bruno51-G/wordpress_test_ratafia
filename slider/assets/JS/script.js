@@ -149,3 +149,10 @@ document.getElementById('bouton_clair').addEventListener('click', () => {
 document.getElementById('bouton_sombre').addEventListener('click', () => {
     document.body.classList.add('theme_sombre');
 });
+
+// === Gestion de la police dyslexie ===
+const boutonDyslexie = document.getElementById('bouton_dyslexie');
+
+boutonDyslexie.addEventListener('click', () => {
+    document.body.classList.toggle('police_dyslexie');
+});

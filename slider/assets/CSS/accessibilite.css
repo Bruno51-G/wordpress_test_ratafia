@@ -60,3 +60,37 @@ body.theme_sombre .liens_droite a {
 body.theme_sombre .bouton_theme img {
   filter: invert(1);
 }
+
+/* === CHANGEMENT DE LA TYPOGRAPHIE === */
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexicMono-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+/* La typographie passe en blanc en mode sombre */
+body.theme_sombre #bouton_dyslexie {
+  color: #FFFFFF;
+}
+
+/* Retour à la typographie d'origine */
+body.police_dyslexie h2,
+body.police_dyslexie h3,
+body.police_dyslexie .decouverte_cuvee,
+body.police_dyslexie .liens_droite a {
+  font-family: 'OpenDyslexic', sans-serif;
+}
+
+/* === La taille de la police s'adapte pour éviter le chevauchement === */
+body.police_dyslexie h2 {
+  font-size: 6rem;
+}
+
+body.police_dyslexie h3 {
+  font-size: 4.5rem;
+}
+
+body.police_dyslexie .liens_droite a {
+  font-size: 2.2rem;
+}
