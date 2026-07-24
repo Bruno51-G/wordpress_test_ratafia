@@ -142,14 +142,6 @@ h3{
   transform: scale(1) translateX(8%);
 }
 
-.bouteille img {
-  width: auto;
-  height: 100%;
-  max-height: 80rem;
-  display: block;
-  margin: 0 auto;
-}
-
 .bouteille.precedent {
   opacity: 1;
   transform: scale(0.8) translateX(-60%);
@@ -158,6 +150,14 @@ h3{
 .bouteille.suivant {
   opacity: 1;
   transform: scale(0.8) translateX(70%);
+}
+
+.bouteille img {
+  width: auto;
+  height: 100%;
+  max-height: 80rem;
+  display: block;
+  margin: 0 auto;
 }
 
 .bouteilles_piste,
