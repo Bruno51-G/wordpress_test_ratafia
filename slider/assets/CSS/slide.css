@@ -224,8 +224,9 @@ a{
 
 /* === RESPONSIVE === */
 
-/* Tablette */
-@media (max-width: 768px) {
+/* Tablette et desktop intermédiaire */
+@media (max-width: 1500px) {
+
   h2 {
     font-size: 5rem;
   }
@@ -235,12 +236,21 @@ a{
   }
 
   .titre_slide {
+    position: relative;
     line-height: 8rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   .liens_droite {
-    top: 15rem;
-    right: 1rem;
+    position: relative;
+    top: auto;
+    right: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
   }
 
   .liens_droite a {
@@ -254,6 +264,24 @@ a{
   .decouverte_cuvee {
     font-size: 1.6rem;
     padding: 0.8rem 1.6rem;
+  }
+
+  /* Navigation sous le slide */
+  .slide_navigation {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  /* Bouton PARCOURIR LA GAMME adapté mobile */
+  .decouverte_cuvee {
+    font-size: 3rem;
+    letter-spacing: 0.05rem;
+    padding: 0.6rem 0.8rem;
+    white-space: nowrap;
   }
 
   .bouton_navigation {

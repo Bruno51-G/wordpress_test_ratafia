@@ -97,6 +97,28 @@ piste.addEventListener('mouseleave', () => {
     isDragging = false;
 });
 
+// === Gestion du swipe tactile sur les bouteilles ===
+
+// Début du toucher
+piste.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+// Fin du toucher
+piste.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const distance = endX - startX;
+
+    if (distance > seuilSwipe) {
+        // Swipe vers la droite : bouteille précédente
+        current = getPrev(current);
+        updateSlider();
+    } else if (distance < -seuilSwipe) {
+        // Swipe vers la gauche : bouteille suivante
+        current = getNext(current);
+        updateSlider();
+    }
+});
 
 // Fonction principale
 function updateSlider() {
