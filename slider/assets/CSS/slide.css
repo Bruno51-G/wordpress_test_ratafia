@@ -292,6 +292,10 @@ a{
 /* Mobile */
  @media (max-width: 480px) {
 
+  html, body{
+    overflow-x: hidden;
+  }
+
   .titre_slide {
     position: relative;
     line-height: 5rem;
