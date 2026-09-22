@@ -327,11 +327,20 @@ a{
   }
 
   .bouteille {
-    min-width: 50%;
+    pointer-events: none;
   }
 
   .bouteille img {
     max-height: 30rem;
+  }
+
+  .bouteilles_piste {
+    height: 80%;
+    position: absolute;
+}
+
+  .bouteille.actif {
+    pointer-events: auto;
   }
 
   /* Permet à la navigation de sortir du slide */
@@ -347,6 +356,8 @@ a{
     transform: none !important;
     justify-content: center;
     margin-top: 10rem;
+    pointer-events: auto;
+    z-index: 10;
   }
 
   /* Bouton PARCOURIR LA GAMME adapté mobile */
