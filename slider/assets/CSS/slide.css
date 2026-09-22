@@ -337,10 +337,18 @@ a{
   .bouteilles_piste {
     height: 80%;
     position: absolute;
+    justify-content: center;
 }
 
   .bouteille.actif {
     pointer-events: auto;
+    min-width: 100%;
+    margin-left: 28%;
+  }
+  
+  .bouteille.precedent,
+  .bouteille.suivant {
+    display: none;
   }
 
   /* Permet à la navigation de sortir du slide */
