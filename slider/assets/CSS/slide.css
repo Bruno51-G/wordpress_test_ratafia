@@ -224,7 +224,8 @@ a{
 
 /* === RESPONSIVE === */
 
-/* Tablette et desktop intermédiaire */
+/* Version desktop */
+
 @media (max-width: 1500px) {
 
   h2 {
@@ -289,7 +290,7 @@ a{
   }
 }
 
-/* Mobile */
+/* Version mobile */
  @media (max-width: 480px) {
 
   html, body{
