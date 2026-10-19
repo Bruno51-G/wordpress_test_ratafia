@@ -291,6 +291,7 @@ a{
 }
 
 /* Version mobile */
+
  @media (max-width: 480px) {
 
   html, body{
