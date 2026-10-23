@@ -279,7 +279,7 @@ a{
 
   /* Bouton PARCOURIR LA GAMME adapté mobile */
   .decouverte_cuvee {
-    font-size: 3rem;
+    
     letter-spacing: 0.05rem;
     padding: 0.6rem 0.8rem;
     white-space: nowrap;

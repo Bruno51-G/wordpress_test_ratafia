@@ -142,7 +142,7 @@ document.getElementById('bouton_suivant').addEventListener('click', () => {
 // Initialisation au chargement
 updateSlider();
 
-// === Utilisation du clavier au clavier ===
+// === Utilisation du clavier ===
 document.addEventListener('keydown', (e) => {
     
     // Flèche gauche : bouteille précédente
