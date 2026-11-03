@@ -360,10 +360,10 @@ a{
 
   /* Navigation sous le slide */
   .slide_navigation {
-    position: static !important;
-    bottom: auto !important;
-    left: auto !important;
-    transform: none !important;
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
     justify-content: center;
     margin-top: 10rem;
     pointer-events: auto;
